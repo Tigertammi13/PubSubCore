@@ -23,7 +23,7 @@ def handle(client):
     while True:
         try:
             message = client.recv(1024)
-            print(message)
+            print(message.decode("ascii"))
             #Queue.put(message)
         except:
             index = clients.index(client)
