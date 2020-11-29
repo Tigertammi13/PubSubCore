@@ -78,11 +78,11 @@ def sub():
         service, address = server.accept()
         print_services(services)
         print(f'{address} has just connected')
-        message=service.recv(1024)
-        if len(message)!=10: ### This must separate publisers froms ervicies which are listening
-            services.append(service)
-            thread = threading.Thread(target=pub, args=(service,))
-            thread.start()
+        #message=service.recv(1024)
+        #if len(message)!=10: ### This must separate publisers froms ervicies which are listening
+        services.append(service)
+        thread = threading.Thread(target=pub, args=(service,))
+        thread.start()
 
 print("Server started")
 threading.Thread(target=recieve_jobs).start()
