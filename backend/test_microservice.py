@@ -9,7 +9,7 @@ id = "Calc#1"
 def recieve():
     while True:
         try:
-            message = client.recv(1024).decode("ascii")
+            message = client.recv(10).decode("ascii")
             if message == "WHO":
                 client.send(id.encode("ascii"))
             else:
